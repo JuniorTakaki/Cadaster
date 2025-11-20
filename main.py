@@ -1,15 +1,15 @@
-from cadastro import Cadastro
-from produto import criar_tabela, salvar_no_banco
+from cadastre import Cadastre
+from register import create_table, save_db
 
 def main():
-    criar_tabela()
+    create_table()
 
-    nome = input("Nome do produto: ")
-    quantidade = int(input("Quantidade: "))
-    ano = int(input("Ano: "))
-
-    salvar_no_banco(nome, quantidade, ano)
-
+    user = Cadastre()
+    
+    user.user_name()
+    user.user_surname()
+    user.user_year()
+    save_db(user.name, user.surname, user.year)
 
 if __name__ == "__main__":
     main()
