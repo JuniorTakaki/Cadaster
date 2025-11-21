@@ -32,4 +32,4 @@ def save_db(name, surname, year):
     query = "INSERT INTO register (name, surname, year) VALUES (?, ?, ?)"
     params = (name, surname, year)
     exec_query(query, params)
-    print(f'produto {name} salvo no banco com sucesso')
+    print(f'Usuário {name} cadastro.')
