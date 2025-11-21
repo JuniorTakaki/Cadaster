@@ -1,11 +1,9 @@
 from cadastre import Cadastre
 from register import create_table, save_db
-
 def main():
     create_table()
 
     user = Cadastre()
-    
     user.user_name()
     user.user_surname()
     user.user_year()
