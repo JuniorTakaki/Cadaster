@@ -18,11 +18,8 @@ cadaster
 │   ├── main.py
 │   ├── cadastre.py
 │   └── register.py
-├── tests
-│   └── test_main.py
-├── requirements.txt
-├── pyproject.toml
 └── README.md
+└── see_db.py
 ```
 
 ## Installation
@@ -30,7 +27,7 @@ To set up the project, follow these steps:
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone <https://github.com/JuniorTakaki/Cadaster>
    cd cadaster
    ```
 
