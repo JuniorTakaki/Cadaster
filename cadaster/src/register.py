@@ -1,9 +1,9 @@
 import sqlite3
-DB ="register.db"
+DB ="database.db"
 
 def conn_db():
     try:
-        conn = sqlite3.connect('register.db')
+        conn = sqlite3.connect('database.db')
         print("Conexão com db foi estabelecido com sucesso")
         return conn
     except sqlite3.Error as err:
@@ -11,14 +11,14 @@ def conn_db():
         return None
     
 def exec_query(query, params=()):
-    with sqlite3.connect('register.db') as conn:
+    with sqlite3.connect('database.db') as conn:
         cursor = conn.cursor()
         cursor.execute(query, params)
         conn.commit()
 
-def create_table():
+def create_table_user():
     query = (
-        "CREATE TABLE IF NOT EXISTS register ("
+        "CREATE TABLE IF NOT EXISTS users ("
         "id INTEGER PRIMARY KEY AUTOINCREMENT, "
         "name TEXT NOT NULL, "
         "surname TEXT NOT NULL, "
@@ -27,9 +27,28 @@ def create_table():
     )
     exec_query(query)
 
-def save_db(name, surname, year):
+def save_db_user(name, surname, year):
     from register import exec_query
-    query = "INSERT INTO register (name, surname, year) VALUES (?, ?, ?)"
+    query = "INSERT INTO users (name, surname, year) VALUES (?, ?, ?)"
     params = (name, surname, year)
     exec_query(query, params)
     print(f'Usuário {name} cadastro.')
+
+def create_table_car():
+    query = (
+        "CREATE TABLE IF NOT EXISTS cars ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+        "brand TEXT NOT NULL, "
+        "model TEXT NOT NULL, "
+        "car_year INTEGER NOT NULL,"
+        "car_color TEXT NOT NULL"
+        ");"
+    )
+    exec_query(query)
+
+def save_db_car(brand, model, car_year, car_color):
+    from register import exec_query
+    query = "INSERT INTO cars (brand, model, car_year, car_color) VALUES (?, ?, ?, ?)"
+    params = (brand, model, car_year, car_color)
+    exec_query(query, params)
+    print(f'{brand} {model} cadastro.')

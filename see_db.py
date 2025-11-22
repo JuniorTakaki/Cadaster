@@ -1,6 +1,6 @@
 import sqlite3
 
-con = sqlite3.connect("register.db")
+con = sqlite3.connect("database.db")
 cur = con.cursor()
 
 # 1) Mostra o esquema da tabela (garante que criou certo)
@@ -10,7 +10,8 @@ for col in cur.fetchall():
     print(col)  # (cid, name, type, notnull, dflt_value, pk)
 
 print("\nREGISTROS:")
-cur.execute("SELECT id, name, surname, year FROM register ORDER BY id")
+cur.execute("SELECT id, name, surname, year FROM users ORDER BY id ")
+# cur.execute("SELECT id, brand, model, car_year, car_color FROM cars ORDER BY id")
 for row in cur.fetchall():
     print(row)  # (id, name, surname, year)
 
