@@ -6,7 +6,7 @@ class Cadastre:
 
     def user_name(self):
         while True:
-            name_input = input("Primeiro nome = ").strip()
+            name_input = input("first name = ").strip()
             if not name_input:
                 print("O campo não pode ficar vázio.")
             elif not name_input.isalpha():
@@ -36,6 +36,7 @@ class Cadastre:
                 self.age = int(age_input)
                 if self.age < 18:
                     print("O usuário não tem idade insuficiente")
+                    continue
                 else:
                     print(f"confirmado o ano {self.age} ")
                 break

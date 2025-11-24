@@ -1,6 +1,6 @@
 from cadastre import Cadastre
 from car import Car
-from register import create_table_user, save_db_user, save_db_car,create_table_car
+from database import create_table_user, save_db_user, save_db_car,create_table_car
 
 def user_workflow() -> None:
     user = Cadastre()
