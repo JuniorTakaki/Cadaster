@@ -1,11 +1,11 @@
 import pyodbc
 from typing import Optional, Tuple, Any
 
-SERVER = '127.0.0.1,1433'
-DATABASE = 'master' 
-USERNAME = 'sa'
-PASSWORD = 'MoleDoy2025'
-DRIVER = '{ODBC Driver 17 for SQL Server}' 
+SERVER = ''
+DATABASE = '' 
+USERNAME = ''
+PASSWORD = ''
+DRIVER = '{}' 
 
 CONNECTION_STRING = (
     f'DRIVER={DRIVER};'
